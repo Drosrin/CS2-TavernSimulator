@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
+:root {
+  --c-surface: transparent;
+  --c-card: rgba(10, 10, 10, 0.72);
+  --c-border-subtle: rgba(240, 160, 48, 0.35);
+  --c-border-input: rgba(200, 200, 200, 0.15);
+  --c-primary: #f0a030;
+  --c-primary-dim: #b8700f;
+  --c-primary-glow: rgba(240, 160, 48, 0.15);
+  --c-text: #e0e0e0;
+  --c-text-muted: #999;
+  --c-text-dim: #666;
+  --c-label: #f5c842;
+  --c-input-bg: rgba(0, 0, 0, 0.4);
+  --font-display: 'Rajdhani', 'Segoe UI', sans-serif;
+  --font-body: 'Segoe UI', 'Microsoft Yahei', system-ui, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: transparent;
+  color: var(--c-text);
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+@keyframes title-glow {
+  0%, 100% { text-shadow: 0 0 4px #fff, 0 0 10px var(--c-primary), 0 0 20px var(--c-primary-dim); }
+  50% { text-shadow: 0 0 6px #fff, 0 0 16px var(--c-primary), 0 0 32px var(--c-primary-dim); }
+}
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.3; }
+  94% { opacity: 1; }
+  96% { opacity: 0.5; }
+  97% { opacity: 1; }
+}

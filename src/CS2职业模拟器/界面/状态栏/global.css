@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+
+:root {
+  --c-surface: #0f0f0f;
+  --c-card: #181818;
+  --c-card-hover: #1e1e1e;
+  --c-border: #2a2a2a;
+  --c-primary: #f0a030;
+  --c-primary-dim: #b8700f;
+  --c-primary-glow: rgba(240, 160, 48, 0.25);
+  --c-text: #e0e0e0;
+  --c-text-muted: #888;
+  --c-text-dim: #666;
+  --c-stat-stability: #42a5f5;
+  --c-stat-skill: #f0a030;
+  --c-stat-experience: #4caf50;
+  --c-stat-chemistry: #ff9800;
+  --c-danger: #e53935;
+  --c-success: #4caf50;
+  --c-rank-gold: #ffd700;
+  --font-display: 'Rajdhani', 'Segoe UI', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: transparent;
+  color: var(--c-text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-border); border-radius: 2px; }
+
+/* Utility animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px var(--c-primary-glow); }
+  50% { box-shadow: 0 0 12px var(--c-primary-glow); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes title-glow {
+  0%, 100% { text-shadow: 0 0 4px #fff, 0 0 10px var(--c-primary), 0 0 20px var(--c-primary-dim); }
+  50% { text-shadow: 0 0 6px #fff, 0 0 16px var(--c-primary), 0 0 32px var(--c-primary-dim); }
+}
