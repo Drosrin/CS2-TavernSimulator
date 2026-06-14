@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {},
+  "type": "object",
+  "properties": {
+    "玩家": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "姓名": {
+          "default": "",
+          "type": "string"
+        },
+        "国籍": {
+          "default": "",
+          "type": "string"
+        },
+        "年龄": {
+          "default": 0,
+          "type": "number"
+        },
+        "位置": {
+          "default": "",
+          "type": "string"
+        },
+        "稳定性": {
+          "default": 70,
+          "type": "number"
+        },
+        "硬实力": {
+          "default": 70,
+          "type": "number"
+        },
+        "大赛经验": {
+          "default": 30,
+          "type": "number"
+        },
+        "当前战队": {
+          "default": "",
+          "type": "string"
+        },
+        "当前赛事rating": {
+          "default": 0,
+          "type": "number"
+        },
+        "职业生涯": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "Major冠军数": {
+              "default": 0,
+              "type": "number"
+            },
+            "大赛冠军数": {
+              "default": 0,
+              "type": "number"
+            },
+            "MVP数": {
+              "default": 0,
+              "type": "number"
+            },
+            "HLTV_Top20入选次数": {
+              "default": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "赛季": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "default": "2023-10-01",
+          "type": "string"
+        },
+        "当前赛事": {
+          "default": "",
+          "type": "string"
+        },
+        "赛事阶段": {
+          "default": "休赛期",
+          "type": "string",
+          "enum": [
+            "休赛期",
+            "训练期",
+            "小组赛",
+            "淘汰赛",
+            "决赛",
+            "赛后"
+          ]
+        },
+        "赛前状态": {
+          "default": "正常发挥",
+          "type": "string",
+          "enum": [
+            "LifeGame爆发",
+            "正常发挥",
+            "发挥失常"
+          ]
+        }
+      }
+    },
+    "战队": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "化学反应": {
+          "default": 50,
+          "type": "number"
+        },
+        "世界排名": {
+          "default": 20,
+          "type": "number"
+        },
+        "近期战绩": {
+          "default": "",
+          "type": "string"
+        },
+        "阵容": {
+          "default": {},
+          "allOf": [
+            {
+              "type": "object",
+              "properties": {
+                "教练": {
+                  "default": {},
+                  "type": "object",
+                  "properties": {
+                    "姓名": {
+                      "default": "",
+                      "type": "string"
+                    },
+                    "风格": {
+                      "default": "",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "description": "选手名"
+              },
+              "additionalProperties": {
+                "default": {},
+                "type": "object",
+                "properties": {
+                  "姓名": {
+                    "default": "",
+                    "type": "string"
+                  },
+                  "稳定性": {
+                    "default": 70,
+                    "type": "number"
+                  },
+                  "硬实力": {
+                    "default": 70,
+                    "type": "number"
+                  },
+                  "大赛经验": {
+                    "default": 50,
+                    "type": "number"
+                  },
+                  "与玩家关系": {
+                    "default": "队友",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "生态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "转会市场动态": {
+          "default": "",
+          "type": "string"
+        },
+        "社区舆论风向": {
+          "default": "",
+          "type": "string"
+        },
+        "近期重大事件": {
+          "default": "",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
