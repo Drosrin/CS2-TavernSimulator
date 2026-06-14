@@ -108,11 +108,27 @@
       "properties": {
         "化学反应": {
           "default": 50,
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "N/A"
+            },
+            {
+              "type": "number"
+            }
+          ]
         },
         "世界排名": {
           "default": 20,
-          "type": "number"
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "N/A"
+            },
+            {
+              "type": "number"
+            }
+          ]
         },
         "近期战绩": {
           "default": "",
@@ -156,15 +172,39 @@
                   },
                   "稳定性": {
                     "default": 70,
-                    "type": "number"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "N/A"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
                   },
                   "硬实力": {
                     "default": 70,
-                    "type": "number"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "N/A"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
                   },
                   "大赛经验": {
                     "default": 50,
-                    "type": "number"
+                    "anyOf": [
+                      {
+                        "type": "string",
+                        "const": "N/A"
+                      },
+                      {
+                        "type": "number"
+                      }
+                    ]
                   },
                   "与玩家关系": {
                     "default": "队友",
@@ -174,6 +214,32 @@
               }
             }
           ]
+        }
+      }
+    },
+    "职业选手": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "选手名"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "稳定性": {
+            "default": 70,
+            "type": "number"
+          },
+          "硬实力": {
+            "default": 70,
+            "type": "number"
+          },
+          "大赛经验": {
+            "default": 50,
+            "type": "number"
+          }
         }
       }
     },
