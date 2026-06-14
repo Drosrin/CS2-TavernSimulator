@@ -25,8 +25,8 @@ export const Schema = z.object({
   }).prefault({}),
 
   战队: z.object({
-    化学反应: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(50),
-    世界排名: z.coerce.number().prefault(20),
+    化学反应: z.literal('N/A').or(z.coerce.number().transform(v => _.clamp(v, 0, 100))).prefault(50),
+    世界排名: z.literal('N/A').or(z.coerce.number().transform(v => _.clamp(v, 0, 100))).prefault(20),
     近期战绩: z.string().prefault(''),
     阵容: z.intersection(
       z.object({
@@ -37,13 +37,19 @@ export const Schema = z.object({
       }),
       z.record(z.string().describe('选手名'), z.object({
         姓名: z.string().prefault(''),
-        稳定性: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(70),
-        硬实力: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(70),
-        大赛经验: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(50),
+        稳定性: z.literal('N/A').or(z.coerce.number().transform(v => _.clamp(v, 0, 100))).prefault(70),
+        硬实力: z.literal('N/A').or(z.coerce.number().transform(v => _.clamp(v, 0, 100))).prefault(70),
+        大赛经验: z.literal('N/A').or(z.coerce.number().transform(v => _.clamp(v, 0, 100))).prefault(50),
         与玩家关系: z.string().prefault('队友'),
       }).prefault({}))
     ).prefault({}),
   }).prefault({}),
+
+  职业选手: z.record(z.string().describe('选手名'), z.object({
+    稳定性: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(70),
+    硬实力: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(70),
+    大赛经验: z.coerce.number().transform(v => _.clamp(v, 0, 100)).prefault(50),
+  }).prefault({})).prefault({}),
 
   生态: z.object({
     转会市场动态: z.string().prefault(''),
