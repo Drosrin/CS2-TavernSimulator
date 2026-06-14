@@ -11,6 +11,10 @@
           "default": "",
           "type": "string"
         },
+        "真实姓名": {
+          "default": "",
+          "type": "string"
+        },
         "国籍": {
           "default": "",
           "type": "string"
