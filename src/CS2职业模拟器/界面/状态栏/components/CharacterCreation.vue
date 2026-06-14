@@ -30,7 +30,8 @@
             </select>
           </div>
 
-          <div class="field"><label class="fl">选手 ID / 姓名</label><small class="fd">你在职业赛场上的名字</small><input v-model="form.name" class="fi" placeholder="如：Niko, ZywOo, 或自定义ID"></div>
+          <div class="field"><label class="fl">选手 ID / 昵称</label><small class="fd">你在职业赛场上的名字</small><input v-model="form.name" class="fi" placeholder="如：Niko, ZywOo, 或自定义ID"></div>
+          <div class="field"><label class="fl">真实姓名</label><small class="fd">你的本名</small><input v-model="form.realName" class="fi" placeholder="如：Mathieu Herbaut, 张三"></div>
           <div class="field"><label class="fl">性别</label><small class="fd">男 / 女 / 自定义</small><input v-model="form.gender" class="fi" placeholder="男 / 女 / 自定义"></div>
           <div class="field"><label class="fl">年龄</label><small class="fd">新秀17-20 · 巅峰21-27 · 老将28+</small><input v-model="form.age" type="number" class="fi" min="16" max="35" placeholder="19"></div>
           <div class="field"><label class="fl">国籍</label><small class="fd">代表哪个赛区出战</small><input v-model="form.nationality" class="fi" placeholder="如：中国、法国、俄罗斯、巴西…"></div>
@@ -140,6 +141,7 @@ const TOTAL_POINTS = 220;
 const form = reactive({
   timeline: '2025年1月',
   name: '',
+  realName: '',
   gender: '',
   age: '',
   nationality: '',
@@ -168,7 +170,8 @@ function generate() {
   const lines = [
     '起点时间线: ' + form.timeline,
     '选手档案:',
-    '  姓名: ' + (form.name || '未填写'),
+    '  选手ID: ' + (form.name || '未填写'),
+    '  真实姓名: ' + (form.realName || '未填写'),
     '  性别: ' + (form.gender || '未填写'),
     '  年龄: ' + (form.age || '未填写'),
     '  国籍: ' + (form.nationality || '未填写'),

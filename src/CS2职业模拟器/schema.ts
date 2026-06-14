@@ -1,6 +1,7 @@
 export const Schema = z.object({
   玩家: z.object({
     姓名: z.string().prefault(''),
+    真实姓名: z.string().prefault(''),
     国籍: z.string().prefault(''),
     年龄: z.coerce.number().prefault(0),
     位置: z.string().prefault(''),
